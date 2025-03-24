@@ -1,0 +1,52 @@
+{
+  "name": "prct08-generics-funko-app-airam-prieto-gonzalez",
+  "version": "1.0.0",
+  "description": "[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/hGiCucuU) [![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=18485520)",
+  "main": "Main.js",
+  "type": "module",
+  "directories": {
+    "doc": "doc",
+    "test": "tests"
+  },
+  "scripts": {
+    "dev-1": "tsc-watch --onSuccess \"node dist/ejercicio-1/ejercicio-1.js\"",
+    "dev-2": "tsc-watch --onSuccess \"node dist/ejercicio-2/ejercicio-2.js\"",
+    "dev-3": "tsc-watch --onSuccess \"node dist/ejercicio-3/ejercicio-3.js\"",
+    "dev-4": "tsc-watch --onSuccess \"node dist/ejercicio-4/ejercicio-4.js\"",
+    "dev-5": "tsc-watch --onSuccess \"node dist/ejercicio-5/ejercicio-5.js\"",
+    "dev-6": "tsc-watch --onSuccess \"node dist/ejercicio-6/ejercicio-6.js\"",
+    "doc": "typedoc",
+    "test": "vitest run",
+    "coverage": "vitest run --coverage --coverage.include src --coverage.exclude docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ULL-ESIT-INF-DSI-2425/prct06-generics-solid-Airam-Prieto-Gonzalez.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ULL-ESIT-INF-DSI-2425/prct06-generics-solid-Airam-Prieto-Gonzalez/issues"
+  },
+  "homepage": "https://github.com/ULL-ESIT-INF-DSI-2425/prct06-generics-solid-Airam-Prieto-Gonzalez#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "@types/node": "^22.13.13",
+    "@types/yargs": "^17.0.33",
+    "@vitest/coverage-v8": "^3.0.7",
+    "eslint": "^9.21.0",
+    "eslint-config-prettier": "^10.0.2",
+    "globals": "^16.0.0",
+    "prettier": "^3.5.2",
+    "tsc-watch": "^6.2.1",
+    "typedoc": "^0.27.9",
+    "typescript-eslint": "^8.25.0",
+    "vitest": "^3.0.7"
+  },
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "types": "^0.1.1",
+    "yargs": "^17.7.2"
+  }
+}

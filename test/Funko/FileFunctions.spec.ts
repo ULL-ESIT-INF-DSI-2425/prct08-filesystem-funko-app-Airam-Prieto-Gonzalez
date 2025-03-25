@@ -5,7 +5,7 @@ import * as FO from "../../src/Funko/FileFunctions";
 describe("FunkoPop class", () => {
     test("should create a new FunkoPop object", () => {
         const funko = new FunkoPop(1, "Mario", "Mario the plumber", "Pop!", "Games", "Nintendo", 1, true, "Cute", 10);
-        expect(FO.writeFunkoPopToFile("test", funko)).toEqual(undefined);
+        expect(FO.writeFunkoPopToFile("test", funko)).toEqual(1);
 
     });
     test("should read a FunkoPop object from file", () => {

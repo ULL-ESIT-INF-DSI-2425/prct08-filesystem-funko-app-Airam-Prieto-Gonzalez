@@ -9,14 +9,19 @@ import path from "path";
  * @param user the user account
  * @param funko the funko to write
  */
-export function writeFunkoPopToFile(user: string, funko: FunkoPop): number | undefined {
+export function writeFunkoPopToFile(
+  user: string,
+  funko: FunkoPop,
+): number | undefined {
   const dirPath = `./users/${user}`;
   const filePath = path.join(dirPath, "funkos.json");
 
   // Check if the directory exists
   fs.access(dirPath, fs.constants.F_OK, (errAccess) => {
     if (errAccess) {
-      console.log(chalk.yellow("WARNING: The path does not exist, creating..."));
+      console.log(
+        chalk.yellow("WARNING: The path does not exist, creating..."),
+      );
       fs.mkdir(dirPath, { recursive: true }, (errMkdir) => {
         if (errMkdir) {
           console.log(chalk.red("Error creating directory:", errMkdir.message));
@@ -56,7 +61,9 @@ export function writeFunkoPopToFile(user: string, funko: FunkoPop): number | und
           console.log(chalk.red("Error writing file:", errWrite.message));
           return;
         }
-        console.log(chalk.green(`FunkoPop with ID ${funko.id} added successfully`));
+        console.log(
+          chalk.green(`FunkoPop with ID ${funko.id} added successfully`),
+        );
       });
     });
   }
@@ -105,14 +112,14 @@ export function readFunkoPopsFromFile(user: string): string | undefined {
             funko._price <= 10
               ? chalk.red
               : funko._price > 10 && funko._price <= 20
-              ? chalk.yellow
-              : funko._price > 20 && funko._price <= 30
-              ? chalk.yellowBright
-              : chalk.green;
+                ? chalk.yellow
+                : funko._price > 20 && funko._price <= 30
+                  ? chalk.yellowBright
+                  : chalk.green;
 
           console.log(
             `Name: ${funko._name}\n\t` +
-              `Description: ${funko._description}\n\tType: ${funko._type}\n\tGender: ${funko._gender}\n\tFranchise: ${funko._franchise}\n\tSID: ${funko._sid}\n\tExclusive: ${funko._exclusive}\n\tQualities: ${funko._qualities}\n\tPrice: ${priceColor(funko._price.toString())}\n\t`
+              `Description: ${funko._description}\n\tType: ${funko._type}\n\tGender: ${funko._gender}\n\tFranchise: ${funko._franchise}\n\tSID: ${funko._sid}\n\tExclusive: ${funko._exclusive}\n\tQualities: ${funko._qualities}\n\tPrice: ${priceColor(funko._price.toString())}\n\t`,
           );
         });
       });
@@ -128,7 +135,10 @@ export function readFunkoPopsFromFile(user: string): string | undefined {
  * @param user the user account
  * @param id the id of the funko to delete
  */
-export function deleteFunkoPopFromFile(user: string, id: number): string | undefined {
+export function deleteFunkoPopFromFile(
+  user: string,
+  id: number,
+): string | undefined {
   const dirPath = `./users/${user}`;
   const filePath = path.join(dirPath, "funkos.json");
 
@@ -172,7 +182,9 @@ export function deleteFunkoPopFromFile(user: string, id: number): string | undef
             console.log(chalk.red("Error writing file:", errWrite.message));
             return;
           }
-          console.log(chalk.green(`FunkoPop with ID ${id} deleted successfully`));
+          console.log(
+            chalk.green(`FunkoPop with ID ${id} deleted successfully`),
+          );
           console.log("deleted");
         });
       });
@@ -191,7 +203,7 @@ export function deleteFunkoPopFromFile(user: string, id: number): string | undef
 export function modifyFunkoPopFromFile(
   user: string,
   id: number,
-  funko: FunkoPop
+  funko: FunkoPop,
 ): undefined | FunkoPop {
   const dirPath = `./users/${user}`;
   const filePath = path.join(dirPath, "funkos.json");
@@ -235,7 +247,9 @@ export function modifyFunkoPopFromFile(
             console.log(chalk.red("Error writing file:", errWrite.message));
             return;
           }
-          console.log(chalk.green(`FunkoPop with ID ${id} modified successfully`));
+          console.log(
+            chalk.green(`FunkoPop with ID ${id} modified successfully`),
+          );
         });
       });
     });
@@ -249,7 +263,10 @@ export function modifyFunkoPopFromFile(
  * @param user the user account
  * @param id the id of the funko to view
  */
-export function viewOneFunkoFromFile(user: string, id: number): string | undefined {
+export function viewOneFunkoFromFile(
+  user: string,
+  id: number,
+): string | undefined {
   const dirPath = `./users/${user}`;
   const filePath = path.join(dirPath, "funkos.json");
 
@@ -282,13 +299,13 @@ export function viewOneFunkoFromFile(user: string, id: number): string | undefin
               funkos[i]._price <= 10
                 ? chalk.red
                 : funkos[i]._price > 10 && funkos[i]._price <= 20
-                ? chalk.yellow
-                : funkos[i]._price > 20 && funkos[i]._price <= 30
-                ? chalk.greenBright
-                : chalk.green;
+                  ? chalk.yellow
+                  : funkos[i]._price > 20 && funkos[i]._price <= 30
+                    ? chalk.greenBright
+                    : chalk.green;
             console.log(
               `Name: ${funkos[i]._name}\n\t` +
-                `Description: ${funkos[i]._description}\n\tType: ${funkos[i]._type}\n\tGender: ${funkos[i]._gender}\n\tFranchise: ${funkos[i]._franchise}\n\tSID: ${funkos[i]._sid}\n\tExclusive: ${funkos[i]._exclusive}\n\tQualities: ${funkos[i]._qualities}\n\tPrice: ${priceColor(funkos[i]._price.toString())}\n\t`
+                `Description: ${funkos[i]._description}\n\tType: ${funkos[i]._type}\n\tGender: ${funkos[i]._gender}\n\tFranchise: ${funkos[i]._franchise}\n\tSID: ${funkos[i]._sid}\n\tExclusive: ${funkos[i]._exclusive}\n\tQualities: ${funkos[i]._qualities}\n\tPrice: ${priceColor(funkos[i]._price.toString())}\n\t`,
             );
             found = true;
             console.log("viewed");
